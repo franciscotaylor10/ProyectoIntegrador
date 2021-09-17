@@ -1,32 +1,21 @@
-const Post = require('../models/Post')
+const posts = require("../modules/posts");
+const users = require("../modules/users");
+const comments = require("../modules/comments");
 
-exports.create = (req, res) => {
-    // Validate request
-    if (!req.body.title) {
-      res.status(400).send({ message: "Content can not be empty!" });
-      return;
+const controller = {
+  showAgregarPost: function (req, res) {
+    res.render("social/agregarPost");
+  },
+  showDetallePost: function (req, res) {
+    // res.render("social/detallePost", {posts: posts.list , comments: comments.list});
+    for (let i = 0; i < posts.list.length; i++) {
+      const element = posts.list[i];
+      if (element.id == req.params.id) {
+        res.render("social/detallePost", { posts: element });
+      }
     }
-  
-    // Create a Tutorial
-    const post = new Post({
-    
-      titulo: 'tituloPost',
-      texto: 'holaaa',
-      comentarios:'',
-      fecha:'',
-      
-    });
-  
-    // Save Tutorial in the database
-    tutorial
-      .save(tutorial)
-      .then(data => {
-        res.send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while creating the Tutorial."
-      });
-    });
+    // falta agregar si hay algun error
+  },
 };
+
+module.exports = controller;

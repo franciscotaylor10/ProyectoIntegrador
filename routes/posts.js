@@ -1,15 +1,10 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+var controller = require("../controllers/postController");
+var posts = require("../modules/posts");
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-router.post('/', function(req, res, next) {
-
-  });
-
-
+router.get("/agregarPost", controller.showAgregarPost);
+router.get("/detallePost/:id", controller.showDetallePost);
 
 module.exports = router;
