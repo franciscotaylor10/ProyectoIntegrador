@@ -1,4 +1,4 @@
-let posteos ={
+let usuarios ={
     lista:[
         {
             id: 0,

@@ -1,4 +1,4 @@
-let posteos ={
+let comments ={
     lista:[
         {
             id: 0,
