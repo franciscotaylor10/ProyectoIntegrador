@@ -1,4 +1,4 @@
-let posteos ={
+let usuarios ={
     lista:[
         {
             id: 0,
@@ -114,4 +114,4 @@ let posteos ={
         },
     ]
 }
-module.exports = computadoras;
+module.exports = usuarios;

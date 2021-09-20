@@ -114,4 +114,4 @@ let comments ={
         },
     ]
 }
-module.exports = computadoras;
+module.exports = comments;
