@@ -5,13 +5,13 @@ const comments = require("../modules/comments");
 
 const controller = {
   showLogin: function (req, res) {
-    res.render("social/login");
+    res.render("login");
   },
   showRegister: function (req, res) {
-    res.render("social/registracion");
+    res.render("registracion");
   },
   showDetalleUsuario: function (req, res) {
-    // res.render("social/detalleUsuario");
+    // res.render("detalleUsuario");
     var paramsUsername = req.params.username;
     var user;
     var post = [];
@@ -29,16 +29,16 @@ const controller = {
       }
     }
     if (user) {
-      res.render("social/detalleUsuario", { user: user, posts: posts });
+      res.render("detalleUsuario", { user: user, posts: posts });
     } else {
       return "error";
     }
   },
   showEditarPerfil: function (req, res) {
-    res.render("social/editarPerfil");
+    res.render("editarPerfil");
   },
   showMiPerfil: function (req, res) {
-    res.render("social/miPerfil");
+    res.render("miPerfil");
   },
 };
 

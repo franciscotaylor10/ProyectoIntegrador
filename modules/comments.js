@@ -1,17 +1,16 @@
 let comments ={
     lista:[
         {
-            id: 0,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            id: 1,
+            comentario: "estoy de vacaciones",
             fecha: "",
+            usuarioId: 1,
+            postId: 1
   
 
         },
         {
-            id: 1,
+            id: 2,
             titulo: "vacaciones",
             descripcion: "estoy de vacaciones",
             imagen: "",
@@ -21,7 +20,7 @@ let comments ={
 
         },
         {
-            id: 2,
+            id: 3,
             titulo: "vacaciones",
             descripcion: "estoy de vacaciones",
             imagen: "",

@@ -1,117 +1,58 @@
 let usuarios ={
     lista:[
         {
-            id: 0,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
+            id: 1,
+            nombreDeUsuario: " LeylaFernandez_123",
+            email: "leyalfernandez@gmail.com",
             imagen: "",
-            usuario: "francisco",
-            fecha: "",
+            contra: "4871Leyla_",
+            fecha: "2020 - 05 - 30",
+            telefono: 1123456789
   
 
         },
         {
-            id: 1,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
-            fecha: "",
-
-
-        },
-        {
             id: 2,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
+            nombreDeUsuario: "Emma_Raducanu.original",
+            email: "leyalfernandez@gmail.com",
             imagen: "",
-            usuario: "francisco",
-            fecha: "",
+            contra: "4871Leyla_",
+            fecha: "2020 - 05 - 30",
+            telefono: 1123456789
+
 
         },
         {
             id: 3,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
+            nombreDeUsuario: "Trueno435_",
+            email: "leyalfernandez@gmail.com",
             imagen: "",
-            usuario: "francisco",
-            fecha: "",
-
+            contra: "4871Leyla_",
+            fecha: "2020 - 05 - 30",
+            telefono: 1123456789
 
         },
         {
             id: 4,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
+            nombreDeUsuario: "Gamelogt_65T",
+            email: "leyalfernandez@gmail.com",
             imagen: "",
-            usuario: "francisco",
-            fecha: "",
+            contra: "4871Leyla_",
+            fecha: "2020 - 05 - 30",
+            telefono: 1123456789
 
 
         },
         {
             id: 5,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
+            nombreDeUsuario: "Sulivan.terotiman",
+            email: "leyalfernandez@gmail.com",
             imagen: "",
-            usuario: "francisco",
-            fecha: "",
+            contra: "4871Leyla_",
+            fecha: "2020 - 05 - 30",
+            telefono: 1123456789
 
-        },
-        {
-            id: 6,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
-            fecha: "",
-
-        },
-        {
-            id: 7,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
-            fecha: "",
-
-        },
-        {
-            id: 8,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
-            fecha: "",
-
-        },
-        {
-            id: 9,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
-            fecha: "",
-
-        },
-        {
-            id: 10,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
-            fecha: "",
-
-        },
-        {
-            id: 11,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
-            fecha: "",
-
-        },
+        }
     ]
 }
 module.exports = usuarios;
