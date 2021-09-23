@@ -24,7 +24,7 @@ let posteos ={
             descripcion: "estoy de vacaciones",
             imagen: "",
             fecha: "",
-            usuarioId: 1
+            usuarioId: 3
 
         },
         {
@@ -32,7 +32,7 @@ let posteos ={
             descripcion: "estoy de vacaciones",
             imagen: "",
             fecha: "",
-            usuarioId: 1
+            usuarioId: 4
 
 
         },
@@ -41,7 +41,7 @@ let posteos ={
             descripcion: "estoy de vacaciones",
             imagen: "",
             fecha: "",
-            usuarioId: 1
+            usuarioId: 5
 
 
         },
@@ -58,7 +58,7 @@ let posteos ={
             descripcion: "estoy de vacaciones",
             imagen: "",
             fecha: "",
-            usuarioId: 1
+            usuarioId: 2
 
         },
         {
@@ -66,14 +66,14 @@ let posteos ={
             descripcion: "estoy de vacaciones",
             imagen: "",
             fecha: "",
-            usuarioId: 1
+            usuarioId: 3
         },
         {
             id: 9,
             descripcion: "estoy de vacaciones",
             imagen: "",
             fecha: "",
-            usuarioId: 1
+            usuarioId: 4
 
         },
         {
@@ -81,7 +81,7 @@ let posteos ={
             descripcion: "estoy de vacaciones",
             imagen: "",
             fecha: "",
-            usuarioId: 1
+            usuarioId: 5
 
         }
     ]

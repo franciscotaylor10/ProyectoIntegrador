@@ -19,7 +19,7 @@
                                         <div>
                                             <img src="https://via.placeholder.com/40" alt="">
                                         </div>
-                                        <h4><a href="/users/detalleUsuario/A"><%=usuarios[post.usuarioId-1].nombreDeUsuario %> </a></h4>
+                                        <h4><a href="/users/detalleUsuario/<%= post.usuarioId %>"><%=usuarios[post.usuarioId-1].nombreDeUsuario %> </a></h4>
     
                                     </div>
                                     <div class="post-body uk-flex uk-flex-center">
@@ -35,7 +35,7 @@
                                             </li>
                                         </ul>
                                         <div class="post-pie uk-flex">
-                                            <h5 class="uk-width-1-6"><a href="/users/detalleUsuario/A"><%=usuarios[post.usuarioId-1].nombreDeUsuario %></a></h5>
+                                            <h5 class="uk-width-1-6"><a href="/users/detalleUsuario/<%= post.usuarioId %>"><%=usuarios[post.usuarioId-1].nombreDeUsuario %></a></h5>
                                             <p class="uk-width-5-6"><%= post.descripcion %> </p>
                                         </div>
                                     </div>
@@ -46,7 +46,7 @@
                                         <% const comentario=comments[i] %> 
                                         <% if (comentario.postId == post.id) { %>
                                             <li>
-                                                <a href="/users/detalleUsuario/A"><%= usuarios[comentario.usuarioId-1].nombreDeUsuario %> </a>
+                                                <a href="/users/detalleUsuario/<%= comentario.usuarioId %> "><%= usuarios[comentario.usuarioId-1].nombreDeUsuario %> </a>
                                                 <p><%= comentario.comentario %> </p>
                                             </li>
                                         <% } %>

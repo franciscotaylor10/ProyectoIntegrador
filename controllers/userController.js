@@ -12,26 +12,11 @@ const controller = {
   },
   showDetalleUsuario: function (req, res) {
     // res.render("detalleUsuario");
-    var paramsUsername = req.params.username;
-    var user;
-    var post = [];
-
-    for (let i = 0; i < users.list.length; i++) {
-      const element = users.list[i];
-      if (element.username == paramsUsername) {
-        user = element;
+    for (let i = 0; i < users.lista.length; i++) {
+      const element = users.lista[i];
+      if (element.id == req.params.id) {
+        res.render("detalleUsuario", { usuario: element, posts:posts.lista});
       }
-    }
-    for (let i = 0; i < posts.list.length; i++) {
-      const element = posts.list[i];
-      if (element.username == paramsUsername) {
-        post.push(element);
-      }
-    }
-    if (user) {
-      res.render("detalleUsuario", { user: user, posts: posts });
-    } else {
-      return "error";
     }
   },
   showEditarPerfil: function (req, res) {
