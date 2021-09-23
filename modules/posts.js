@@ -14,7 +14,7 @@ let posteos ={
             descripcion: "Dark Souls es un RPG de acción en tercera persona, que se caracteriza por una atmósfera oscura y una dificultad muy por encima de los estándares actuales.",
             imagen: "/images/posts/dark_souls.jpeg",
             fecha: "2021 - 08 - 17",
-            usuarioId: 1
+            usuarioId: 2
         
 
 
