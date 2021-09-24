@@ -11,105 +11,88 @@ let comments ={
         },
         {
             id: 2,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
+            usuarioId: 1,
+            postId: 1
 
 
         },
         {
             id: 3,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
-
-        },
-        {
-            id: 3,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
-            fecha: "",
-
-
+            usuarioId: 1,
+            postId: 1
         },
         {
             id: 4,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
-
+            usuarioId: 1,
+            postId: 1
 
         },
         {
             id: 5,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
+            usuarioId: 1,
+            postId: 1
+
 
         },
         {
             id: 6,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
-
+            usuarioId: 1,
+            postId: 1
         },
         {
             id: 7,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
+            usuarioId: 1,
+            postId: 1
 
         },
         {
             id: 8,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
+            usuarioId: 1,
+            postId: 1
 
         },
         {
             id: 9,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
-
+            usuarioId: 1,
+            postId: 1
+        },
+        {
+            id: 9,
+            comentario: "estoy de vacaciones",
+            fecha: "",
+            usuarioId: 1,
+            postId: 1
         },
         {
             id: 10,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
+            usuarioId: 1,
+            postId: 1
 
         },
         {
             id: 11,
-            titulo: "vacaciones",
-            descripcion: "estoy de vacaciones",
-            imagen: "",
-            usuario: "francisco",
+            comentario: "estoy de vacaciones",
             fecha: "",
-
+            usuarioId: 1,
+            postId: 1
         },
     ]
 }
