@@ -23,7 +23,7 @@ const controller = {
     res.render("editarPerfil");
   },
   showMiPerfil: function (req, res) {
-    res.render("miPerfil");
+    res.render("miPerfil",{usuario:users.lista[0]});
   },
 };
 

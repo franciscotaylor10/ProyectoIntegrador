@@ -3,23 +3,50 @@
 
 <%- include('./partials/head') %>
 
-<body>
-    <%- include('./partials/headerDeslogueado') %>
-    <main>
-        <div class="uk-section uk-section-small">
-            <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                <form action="">
-                    
-                    <h2>(Formulario de registración)</h2>
-            
-                </form>
-            </div>
-        </div>
-    </main>
+    <body>
+        <%- include('./partials/headerDeslogueado') %>
+            <main>
+                <div class="uk-section uk-section-small">
+                    <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
+                        <h2>Registrate</h2>
+                        <form action="/">
+                            <p>
+                                <label for="">Nombre de Usuario</label>
+                                <input type="text" name="nombreDeUsuario">
+                            </p>
+                            <p>
+                                <label for="">Email</label>
+                                <input type="email" name="email">
+                            </p>
+                            <p>
+                                <label for="">imagen</label>
+                                <input type="file" name="imagen">
+                            </p>
+                            <p>
+                                <label for="">Fecha de Nacimiento</label>
+                                <input type="date" name="fecha">
+                            </p>
+                            <p>
+                                <label for="">Número de Teléfono</label>
+                                <input type="number" name="telefono">
+                            </p>
+                            <p>
+                                <label for="">Contraseña</label>
+                                <input type="password" name="contra">
+                            </p>
 
-    <%- include('./partials/footer') %>
+                            <p>
+                                <button type="submit">Registrarse</button>
+                            </p>
+
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <%- include('./partials/footer') %>
 
 
-</body>
+    </body>
 
 </html>
