@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//lineas para rutas. QUE ARCHIVOS VOY A USAR DEPENDIENDO QUE ES LO QUE DICE DESPUES DEL LOCAL HOST 3000. 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);

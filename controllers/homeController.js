@@ -1,6 +1,6 @@
-const posts = require('../modules/posts');
-const users = require('../modules/users');
-const comments = require('../modules/comments');
+const posts = require('../data/posts');
+const users = require('../data/users');
+const comments = require('../data/comments');
 
 const controller = {
   showIndex: function (req, res) {
