@@ -1,7 +1,13 @@
+body{
+    background-color: rgb(147, 112, 219);
+    min-height: 100vh;
+}
+
 article.post{
     border: 1px solid lightgray;
     border-radius: 10px;
     margin-bottom: 10px;
+    background-color: whitesmoke;
 }
 
 article.post div.info-usuario{
@@ -67,3 +73,12 @@ article.post div.post-comentarios ul li p{
     margin: 0 5px;
 }
 
+.pie{
+    flex-direction: column;
+}
+
+.pie p{
+    text-align: justify;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
