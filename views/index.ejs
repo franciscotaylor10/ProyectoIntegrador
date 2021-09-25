@@ -19,7 +19,7 @@
                                         <div>
                                             <img src="<%= usuarios[post.usuarioId-1].imagen%>" alt="Foto de Usuario"class="fotoPerfil">
                                         </div>
-                                        <h4><a href="/users/detalleUsuario/<%= post.usuarioId %>"><%=usuarios[post.usuarioId-1].nombreDeUsuario %> </a></h4>
+                                        <h4><a class="hipervinculo" href="/users/detalleUsuario/<%= post.usuarioId %>"><%=usuarios[post.usuarioId-1].nombreDeUsuario %> </a></h4>
     
                                     </div>
                                     <div class="post-body uk-flex uk-flex-center">
@@ -35,7 +35,7 @@
                                             </li>
                                         </ul>
                                         <div class="post-pie uk-flex pie">
-                                            <h5 class=""><a href="/users/detalleUsuario/<%= post.usuarioId %>"><%=usuarios[post.usuarioId-1].nombreDeUsuario %></a></h5>
+                                            <h5 class=""><a class="hipervinculo" href="/users/detalleUsuario/<%= post.usuarioId %>"><%=usuarios[post.usuarioId-1].nombreDeUsuario %></a></h5>
                                             <p class=""><%= post.descripcion %> </p>
                                         </div>
                                     </div>

@@ -82,3 +82,11 @@ article.post div.post-comentarios ul li p{
     padding-right: 15px;
     padding-bottom: 15px;
 }
+
+.hipervinculo{
+    font-family: 'Russo One', sans-serif;
+}
+
+.post-comentarios ul li{
+    flex-direction: column;
+}

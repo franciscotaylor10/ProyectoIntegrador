@@ -1,0 +1,28 @@
+.formulario{
+    background-color: white;
+    padding: 20px;
+}
+
+.formulario h2{
+    text-align: center;
+    font-family: 'Acme', sans-serif;
+}
+
+.formulario input{
+    width: 100%;
+    padding: 5px;
+}
+
+.formulario label {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.formulario button{
+    font-family: 'Bebas Neue', cursive;
+    background-color: rgb(106, 90, 205);
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px 20px;
+    
+}
