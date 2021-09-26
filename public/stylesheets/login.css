@@ -1,3 +1,32 @@
 .login{
     min-height:85vh;
 }
+
+.iniciar{
+    background-color: white;
+    padding: 20px;
+}
+
+.iniciar h2{
+    text-align: center;
+    font-family: 'Acme', sans-serif;
+}
+
+.iniciar input{
+    width: 100%;
+    padding: 5px;
+}
+
+.iniciar label {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.iniciar button{
+    font-family: 'Bebas Neue', cursive;
+    background-color: rgb(106, 90, 205);
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px 20px;
+    
+}
