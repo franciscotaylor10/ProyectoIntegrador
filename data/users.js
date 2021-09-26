@@ -47,7 +47,7 @@ let usuarios ={
             id: 5,
             nombreDeUsuario: "Sulivan.terotiman",
             email: "sulivantero_1234@gmail.com",
-            imagen: "images/users/usuarios_id5.jpeg",
+            imagen: "/images/users/usuarios_id5.jpeg",
             contra: "Tero7856_AR",
             fecha: "2016 - 04 - 20",
             telefono: 1123457634

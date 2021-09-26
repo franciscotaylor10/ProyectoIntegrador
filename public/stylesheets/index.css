@@ -90,3 +90,7 @@ article.post div.post-comentarios ul li p{
 .post-comentarios ul li{
     flex-direction: column;
 }
+.img-usuarios{
+    display: flex;
+    align-items: center;
+}

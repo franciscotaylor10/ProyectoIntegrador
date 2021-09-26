@@ -62,6 +62,29 @@ article.detalle-post .imagen-post{
     text-decoration: none;
     margin-right: 4px !important;
 }
+.fondo-detalle{
+    background-color: white;
 
+}
 
+.fondo-detalle button{
+    font-family: 'Bebas Neue', cursive;
+    background-color: rgb(106, 90, 205);
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 0 5px;
+}
+.fondo-detalle input{
+    height: auto;
+    padding: 5px;
+    margin-top: 5px;
+}
+.fondo-detalle form{
+    width: 100%;
+
+}
+.fondo-detalle .agregar-comentario {
+    height: auto;
+}
 

@@ -10,11 +10,11 @@
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-small">
                 <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
-                    <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
+                    <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle detalle-imagen">
                         <img src="<%= usuario.imagen %>" alt="foto de perfil" class="foto-perfil">
                     </div>
-                    <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
-                        <div class="uk-flex uk-flex-middle">
+                    <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-center">
+                        <div class="uk-flex uk-flex-middle detalle-nombre">
                             <h3 class="uk-margin-remove"><%= usuario.nombreDeUsuario %></h3>
                             <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
                         </div>
@@ -23,9 +23,9 @@
                         
                         <div>
                             <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
-                                <li>100 posts</li>
-                                <li>200 seguidores</li>
-                                <li>300 seguidos</li>
+                                <li>100 <br> posts</li>
+                                <li>200 <br> seguidores</li>
+                                <li>300 <br> seguidos</li>
                             </ul>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                        <% for( let i = 0; i < posts.length; i++ ) { %>
                         <% const post = posts[i] %> 
                        <% if (post.usuarioId==usuario.id) { %>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
+                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center mario">
                             <a href="/posts/detallePost/<%= post.id %> " class="link-detalle">
                                 <img src="<%= post.imagen %> " alt="foto de perfil" class="foto-perfil">
                                 <p class="uk-text-center"><%= post.descripcion %> </p>

@@ -16,7 +16,7 @@
                                 <% const post= posts[i]%> 
                                 <article class="post uk-card-default uk-flex uk-flex-column">
                                     <div class="info-usuario uk-flex ">
-                                        <div>
+                                        <div class="img-usuarios"> 
                                             <img src="<%= usuarios[post.usuarioId-1].imagen%>" alt="Foto de Usuario"class="fotoPerfil">
                                         </div>
                                         <h4><a class="hipervinculo" href="/users/detalleUsuario/<%= post.usuarioId %>"><%=usuarios[post.usuarioId-1].nombreDeUsuario %> </a></h4>

@@ -16,3 +16,29 @@
     color: gray;
     text-decoration: none;
 }
+.info-usuario{
+    background-color: white;
+}
+.detalle-imagen{
+    padding: 50px;
+}
+.detalle-nombre{
+    margin-bottom: 30px;
+}
+.info-usuario li{
+    text-align: center;
+}
+.detalle-nombre button{
+    font-family: 'Bebas Neue', cursive;
+    background-color: rgb(106, 90, 205);
+    color: white;
+    font-size: 22px;
+    border: none;
+    padding: 5px 10px;
+}
+.mario{
+    background-color: white;
+    justify-content: stretch;
+    padding: 15px;
+    margin: 10px;
+}

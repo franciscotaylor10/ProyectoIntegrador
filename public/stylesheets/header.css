@@ -15,6 +15,7 @@ header section nav{
 }
 header nav ul li a,
 header a{
+    display: flex;
     color: white;
 }
 header nav ul li a:hover,
@@ -24,7 +25,8 @@ header a:hover{
 }
 .logo{
     margin: 0px;
-    width: 80px; height: 20px;
+    font-family: 'Alfa Slab One', cursive;
+    color: white;
 
 }
 .logo a{
@@ -58,4 +60,7 @@ header nav form input, header nav form ::placeholder, header nav form span{
 .header{
     background-color: royalblue;
     font-family: 'Luckiest Guy', cursive;
+}
+.header img{
+    width: 60px;
 }
