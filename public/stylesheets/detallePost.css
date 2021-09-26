@@ -2,6 +2,7 @@ section.detalle-container{
     border: 1px solid lightgray;
 }
 article.detalle-post{
+    padding: 15px;
     /* border-right: 1px solid lightgray; */
 }
 

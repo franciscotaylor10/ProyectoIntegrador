@@ -24,6 +24,8 @@ header a:hover{
 }
 .logo{
     margin: 0px;
+    width: 80px; height: 20px;
+
 }
 .logo a{
     font-family: 'Fjalla One', sans-serif;
