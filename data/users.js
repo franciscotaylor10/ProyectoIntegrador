@@ -4,7 +4,7 @@ let usuarios ={
             id: 1,
             nombreDeUsuario: " LeylaFernandez_123",
             email: "leyalfernandez@gmail.com",
-            imagen: "/images/users/usuario_id1.jpg",
+            imagen: "/images/users/usuario_id1.jpeg",
             contra: "4871Leyla_",
             fecha: "2020 - 05 - 30",
             telefono: 1123456789
@@ -15,7 +15,7 @@ let usuarios ={
             id: 2,
             nombreDeUsuario: "Emma_Raducanu.original",
             email: "emmaraducanu_123@gmail.com",
-            imagen: "/images/users/usuario_id2.jpg",
+            imagen: "/images/users/usuario_id2.jpeg",
             contra: "Radu_asdf",
             fecha: "2017 - 07 - 21",
             telefono: 1134847943
@@ -36,7 +36,7 @@ let usuarios ={
             id: 4,
             nombreDeUsuario: "Gamelogt_65T",
             email: "isidroketerolak@gmail.com",
-            imagen: "/images/users/usuarios_id4.jpg",
+            imagen: "/images/users/usuarios_id4.jpeg",
             contra: "Red_g65",
             fecha: "2018 - 08 - 11",
             telefono: 1134845436
