@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 
-    const alias = 'Post';
+    const alias = 'Comment';
     
     const cols ={
         id: {
@@ -8,15 +8,14 @@ module.exports = (sequelize, DataTypes) => {
             primarykey: true,
             type: DataTypes.INTEGER,
         },
-        descripcion:{
+        comentario:{
             type: DataTypes.STRING,
-        },
-        imagen:{
-            type: DataTypes.STRING,
-
         },
         fecha:{
            type: DataTypes.DATE 
+        },
+        post_id:{
+            type: DataTypes.INTEGER,  
         },
         users_id: {
             type: DataTypes.INTEGER,
@@ -24,13 +23,13 @@ module.exports = (sequelize, DataTypes) => {
     }
     
     const config = {
-        tableName: 'posts',
+        tableName: 'comments',
         timestamps: false,
         underscored: true
     }
     
-    const Post = sequelize.define(alias, cols, config)
+    const Comment = sequelize.define(alias, cols, config)
     
-    return Post;
+    return Comment;
     
     }
