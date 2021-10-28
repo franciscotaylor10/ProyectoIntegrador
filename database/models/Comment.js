@@ -4,27 +4,29 @@ module.exports = (sequelize, DataTypes) => {
     
     const cols ={
         id: {
-            autoincrement: true,
-            primarykey: true,
+            autoIncrement: true,
+            primaryKey: true,
             type: DataTypes.INTEGER,
         },
         comentario:{
             type: DataTypes.STRING,
-        },
-        fecha:{
-           type: DataTypes.DATE 
         },
         post_id:{
             type: DataTypes.INTEGER,  
         },
         users_id: {
             type: DataTypes.INTEGER,
-        }
+        },
+        created_at:{
+            type: DataTypes.DATE 
+         },
+         updated_at:{
+            type: DataTypes.DATE 
+         },
     }
     
     const config = {
         tableName: 'comments',
-        timestamps: false,
         underscored: true
     }
     

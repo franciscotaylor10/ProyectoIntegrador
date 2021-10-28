@@ -1,14 +1,12 @@
-const posts = require('../data/posts'); //borrar?
-const users = require('../data/users'); //borrar?
-const comments = require('../data/comments'); //borrar?
+
 
 const db = require('../database/models');
 
 const controller = {
   showIndex: function (req, res) {
-    db.posts.findAll()
-    .then((posts) =>{
-      res.render("index", {posts, comments: comments.lista, usuarios: users.lista});
+    db.Post.findAll() //db esta siempre. La segunda parte es el nombre del modelo. La tercera poarte decimos que vamos a hacer con este modelo. 
+    .then((posts) =>{ //Usamos el .then para decirle que cuando me traiga la info haga lo siguiente. 
+      res.render("index", {posts:posts}); //renderizame la vista index y mandame esta info. 
     })
     .catch((error) => {
       res.send(error)

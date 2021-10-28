@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     
     const cols ={
         id: {
-            autoincrement: true,
-            primarykey: true,
+            autoIncrement: true,
+            primaryKey: true,
             type: DataTypes.INTEGER,
         },
         nombre_de_usuario:{
@@ -22,12 +22,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
 
         },
-        fecha:{
-           type: DataTypes.DATE 
-        },
-        numero_telefono: {
-            type: DataTypes.INTEGER,
-        }
     }
     
     const config = {

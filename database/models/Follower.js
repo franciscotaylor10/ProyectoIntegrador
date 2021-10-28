@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     
     const cols ={
         id: {
-            autoincrement: true,
-            primarykey: true,
+            autoIncrement: true,
+            primaryKey: true,
             type: DataTypes.INTEGER,
         },
         seguidor_id:{

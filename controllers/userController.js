@@ -1,6 +1,7 @@
 const posts = require("../data/posts");
 const users = require("../data/users");
 const comments = require("../data/comments");
+const db = require("../database/models");
 // const { post } = require("../routes/users");
 
 const controller = {
@@ -12,18 +13,14 @@ const controller = {
   },
   showDetalleUsuario: function (req, res) {
     // res.render("detalleUsuario");
-    for (let i = 0; i < users.lista.length; i++) {
-      const element = users.lista[i];
-      if (element.id == req.params.id) {
-        res.render("detalleUsuario", { usuario: element, posts:posts.lista});
-      }
-    }
+    db.User.findByPk(req.params.id)
+    .then(user=>{
+      res.render("detalleUsuario", { user: user});
+    })
+    
   },
   showEditarPerfil: function (req, res) {
     res.render("editarPerfil");
-  },
-  showMiPerfil: function (req, res) {
-    res.render("miPerfil",{usuario:users.lista[0]});
   },
 };
 
