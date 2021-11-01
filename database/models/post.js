@@ -1,3 +1,5 @@
+const { post } = require("../../routes/users");
+
 module.exports = (sequelize, DataTypes) => {
 
     const alias = 'Post';
@@ -32,7 +34,16 @@ module.exports = (sequelize, DataTypes) => {
     }
     
     const Post = sequelize.define(alias, cols, config)
-    
+    Post.associate=(model)=>{
+        Post.belongsTo(model.User,{
+            as:"user",
+            foreignKey:"users_id"
+        })
+        Post.hasMany(model.Comment,{
+            as:"comments",
+            foreignKey:"post_id"
+        })
+    }
     return Post;
     
     }

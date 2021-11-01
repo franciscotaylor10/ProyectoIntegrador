@@ -31,7 +31,26 @@ module.exports = (sequelize, DataTypes) => {
     }
     
     const User = sequelize.define(alias, cols, config)
-    
+   User.associate=(model)=>{
+        User.hasMany(model.Post,{
+            as:"posts",
+            foreignKey:"users_id"
+        })
+        User.hasMany(model.Comment,{
+            as:"comments",
+            foreignKey:"users_id"
+        })
+        User.hasMany(model.Follower,{
+            as:"followers",
+            foreignKey:"seguido_id"
+
+        })
+        User.hasMany(model.Follower,{
+            as:"following",
+            foreignKey:"seguidor_id"
+
+        })
+    }
     return User;
     
     }

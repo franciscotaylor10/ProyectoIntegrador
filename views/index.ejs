@@ -17,9 +17,9 @@
                                 <article class="post uk-card-default uk-flex uk-flex-column">
                                     <div class="info-usuario uk-flex ">
                                         <div class="img-usuarios"> 
-                                            <img src="" alt="Foto de Usuario"class="fotoPerfil">
+                                            <img src="<%= post.user.imagen %> " alt="Foto de Usuario"class="fotoPerfil">
                                         </div>
-                                        <h4><a class="hipervinculo" href="/users/detalleUsuario/"></a></h4>
+                                        <h4><a class="hipervinculo" href="/users/detalleUsuario/<%= post.user.id %> "><%= post.user.nombre_de_usuario %> </a></h4>
     
                                     </div>
                                     <div class="post-body uk-flex uk-flex-center">
@@ -35,18 +35,22 @@
                                             </li>
                                         </ul>
                                         <div class="post-pie uk-flex pie">
-                                            <h5 class=""><a class="hipervinculo" href="/users/detalleUsuario/"></a></h5>
+                                            <h5 class=""><a class="hipervinculo" href="/users/detalleUsuario/<%= post.user.id %> "><%= post.user.nombre_de_usuario %> </a></h5>
                                             <p class=""><%= post.descripcion %> </p>
                                         </div>
                                     </div>
                                     <div class="post-comentarios">
                                         <h6>Comentarios</h6>
                                         <ul>
-                            
+                                        <% for( let i = 0; i < post.comments.length; i++ ) { %>
+                                            <% const comment = post.comments[i] %> 
                                             <li>
-                                                <a href="/users/detalleUsuario/"></a>
-                                                <p>Hola</p>
+                                                <a href="/users/detalleUsuario/<%= comment.user.id %> "><%= comment.user.nombre_de_usuario %> </a>
+                                                <p><%= comment.comentario %> </p>
                                             </li>
+                                        <% } %>
+                            
+                                           
     
                                         
                                             <a href="">Ver más...</a>
