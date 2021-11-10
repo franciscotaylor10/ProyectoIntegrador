@@ -1,7 +1,4 @@
-const posts = require("../data/posts");
-const users = require("../data/users");
-const comments = require("../data/comments");
-const db = require("../database/models");
+const db = require("../database/models")
 // const { post } = require("../routes/users");
 
 const controller = {
@@ -12,11 +9,25 @@ const controller = {
     res.render("registracion");
   },
   showDetalleUsuario: function (req, res) {
-    // res.render("detalleUsuario");
-    db.User.findByPk(req.params.id)
-    .then(user=>{
-      res.render("detalleUsuario", { user: user});
-    })
+    
+    
+   db.User.findByPk(req.params.id,{
+    include:[{
+      association: "posts"
+  
+    },
+    {
+      association: "followers"
+    },
+    {
+      association: "following"
+    }
+    ]
+  })
+
+   .then(user=>{
+    res.render("detalleUsuario",{user:user});
+   })
     
   },
   showEditarPerfil: function (req, res) {

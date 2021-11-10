@@ -6,7 +6,17 @@ const controller = {
   },
   showDetallePost: function (req, res) {
     // res.render("social/detallePost", {posts: posts.list , comments: comments.list});
-db.Post.findByPk(req.params.id)
+db.Post.findByPk(req.params.id,{
+  include:[{
+    association: "user"
+
+  },{
+    association: "comments",
+    include:[{
+      association: "user"
+    }]
+  }]
+})
 .then(post=>{
   res.render("detallePost", { post: post});
 })

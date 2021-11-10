@@ -1,6 +1,7 @@
 
 
 const db = require('../database/models');
+const op = db.Sequelize.Op
 
 const controller = {
   showIndex: function (req, res) {
@@ -23,8 +24,21 @@ const controller = {
     
   },
   showResultadoBusqueda: function (req, res) {
-    res.render("resultadoBusqueda");
+    db.Post.findAll({
+      where:{
+      descripcion:{
+        [op.like]:"%"+req.query.search+"%"
+      }
+      }
+    })
+    .then(results=>{
+      
+      res.render("resultadoBusqueda",{
+        posts:results
+      });
+    })
   },
+  
 };
 
 module.exports = controller;

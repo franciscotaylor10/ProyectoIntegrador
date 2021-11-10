@@ -1,5 +1,3 @@
-const { post } = require("../../routes/users");
-
 module.exports = (sequelize, DataTypes) => {
 
     const alias = 'Post';
