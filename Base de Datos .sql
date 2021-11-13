@@ -7,9 +7,9 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre_de_usuario VARCHAR (100),
 email VARCHAR (150),
 imagen VARCHAR (150),
-contra VARCHAR (150),
 fecha DATE,
-numero_telefono BIGINT UNSIGNED 
+numero_telefono BIGINT UNSIGNED,
+contra VARCHAR (150) 
 );
 
 CREATE TABLE posts(
@@ -40,11 +40,11 @@ FOREIGN KEY (seguido_id) REFERENCES users(id)
 );
 
 INSERT INTO users VALUES 
-(DEFAULT,"LeylaFernandez_123","leyalfernandez@gmail.com","/images/users/usuario_id1.jpg","4871Leyla_","2020-05-30",1123456789),
-(DEFAULT,"Emma_Raducanu.original","emmaraducanu_123@gmail.com","/images/users/usuario_id2.jpg","Radu_asdf","2017-07-21",1134847943),
-(DEFAULT,"Trueno435_","alejotrueno.234@gmail.com","/images/users/usuario_id3.jpeg","T@435_ml","2018-05-24",11236770405),
-(DEFAULT,"Gamelogt_65T","isidroketerolak@gmail.com","/images/users/usuarios_id4.jpg","Red_g65","2018-08-11",1134845436),
-(DEFAULT,"Sulivan.terotiman","sulivantero_1234@gmail.com","/images/users/usuarios_id5.jpeg","Tero7856_AR","2016-04-20",1123457634);
+(DEFAULT,"LeylaFernandez_123","leyalfernandez@gmail.com","/images/users/usuario_id1.jpg","2020-05-30",1123456789,"4871Leyla_"),
+(DEFAULT,"Emma_Raducanu.original","emmaraducanu_123@gmail.com","/images/users/usuario_id2.jpg","2017-07-21",1134847943,"Radu_asdf"),
+(DEFAULT,"Trueno435_","alejotrueno.234@gmail.com","/images/users/usuario_id3.jpeg","2018-05-24",11236770405,"T@435_ml"),
+(DEFAULT,"Gamelogt_65T","isidroketerolak@gmail.com","/images/users/usuarios_id4.jpg","2018-08-11",1134845436,"Red_g65"),
+(DEFAULT,"Sulivan.terotiman","sulivantero_1234@gmail.com","/images/users/usuarios_id5.jpeg","2016-04-20",1123457634,"Tero7856_AR");
 
 INSERT INTO posts VALUES
 (DEFAULT,"¡Prepara sabrosos platos y postres de todo el mundo en este adictivo juego GRATUITO de gestión temporal! Usa cientos de deliciosos ingredientes para preparar platos de la mejor calidad.Prueba todo tipo de aparatos de cocina, desde cafeteras y ollas arroceras hasta hornos de pizza y máquinas de palomitas.","/images/posts/cooking_fever.jpeg","2021-08-15",1),

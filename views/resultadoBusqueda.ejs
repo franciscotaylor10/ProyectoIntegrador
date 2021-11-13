@@ -15,6 +15,13 @@
                 <% for( let i = 0; i < posts.length; i++ ) { %>
                     <% const post = posts[i] %> 
                     <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center mario">
+                        <div class="info-usuario uk-flex ">
+                            <div class="img-usuarios"> 
+                                <img src="<%= post.user.imagen %> " alt="Foto de Usuario"class="fotoPerfil">
+                            </div>
+                            <h4><a class="hipervinculo" href="/users/detalleUsuario/<%= post.user.id %> "><%= post.user.nombre_de_usuario %> </a></h4>
+
+                        </div>
                         <a href="/posts/detallePost/<%= post.id %> " class="link-detalle">
                             <img src="<%= post.imagen %> " alt="foto de perfil" class="foto-perfil">
                             <p class="uk-text-center"><%= post.descripcion %> </p>

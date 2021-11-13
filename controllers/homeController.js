@@ -29,7 +29,10 @@ const controller = {
       descripcion:{
         [op.like]:"%"+req.query.search+"%"
       }
-      }
+      },
+      include:[{
+        association:"user"
+      }]
     })
     .then(results=>{
       

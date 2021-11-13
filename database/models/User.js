@@ -18,7 +18,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
 
         },
-        contra:{
+        fecha:{
+            type: DataTypes.DATE,
+
+        },
+        numero_telefono:{
+            type: DataTypes.INTEGER,
+
+        },
+         contra:{
             type: DataTypes.STRING,
 
         },
