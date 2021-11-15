@@ -1,13 +1,20 @@
 const db = require("../database/models")
 const bcrypt = require("bcryptjs")
 // const { post } = require("../routes/users");
-const validateUser = async function (req) {
+const validateUser = function (req) {
   const errors = [];
   if (!req.body.contra || req.body.contra.length < 3) {
     errors.push('LA CONSTRASEÑA DEBE TENER MÍNIMO 3 CARACTERES');
   }
   if (!req.body.email) {
     errors.push('EL EMAIL ES REQUERIDO');
+  }else{
+    db.User.findOne({where:{email: req.body.email}})
+    .then(user=>{
+      if(user){
+        errors.push('EL EMAIL YA ESTÁ SIENDO UTILIZADO');
+      }
+    })  
   }
   if (!req.body.nombre_de_usuario) {
     errors.push('EL NOMBRE DE USUARIO ES REQUERIDO');
@@ -21,10 +28,7 @@ const validateUser = async function (req) {
   if (!req.body.numero_telefono) {
     errors.push('EL NÚMERO DE TELÉFONO ES REQUERIDO');
   }
-  const user = await db.User.findOne({where:{email: req.body.email}})
-  if(!user){
-    errors.push('EL EMAIL YA ESTÁ SIENDO UTILIZADO');
-  }
+  
   return errors;
 }
 
