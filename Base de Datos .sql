@@ -10,8 +10,8 @@ imagen VARCHAR (150),
 fecha DATE,
 numero_telefono BIGINT UNSIGNED,
 contra VARCHAR (150), 
-createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE posts(
@@ -21,8 +21,8 @@ imagen VARCHAR (150),
 fecha DATE,
 users_id INT UNSIGNED,
 FOREIGN KEY (users_id) REFERENCES users(id),
-createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE comments(
@@ -33,8 +33,8 @@ post_id INT UNSIGNED,
 users_id INT UNSIGNED,
 FOREIGN KEY (users_id) REFERENCES users(id),
 FOREIGN KEY (post_id) REFERENCES posts(id),
-createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE followers(
@@ -43,15 +43,15 @@ seguidor_id INT UNSIGNED,
 seguido_id INT UNSIGNED, 
 FOREIGN KEY (seguidor_id) REFERENCES users(id),
 FOREIGN KEY (seguido_id) REFERENCES users(id),
-createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO users VALUES 
-(DEFAULT,"LeylaFernandez_123","leyalfernandez@gmail.com","/images/users/usuario_id1.jpg","2020-05-30",1123456789,"4871Leyla_",default,default),
-(DEFAULT,"Emma_Raducanu.original","emmaraducanu_123@gmail.com","/images/users/usuario_id2.jpg","2017-07-21",1134847943,"Radu_asdf",default,default),
+(DEFAULT,"LeylaFernandez_123","leyalfernandez@gmail.com","/images/users/usuario_id1.jpeg","2020-05-30",1123456789,"4871Leyla_",default,default),
+(DEFAULT,"Emma_Raducanu.original","emmaraducanu_123@gmail.com","/images/users/usuario_id2.jpeg","2017-07-21",1134847943,"Radu_asdf",default,default),
 (DEFAULT,"Trueno435_","alejotrueno.234@gmail.com","/images/users/usuario_id3.jpeg","2018-05-24",11236770405,"T@435_ml",default,default),
-(DEFAULT,"Gamelogt_65T","isidroketerolak@gmail.com","/images/users/usuarios_id4.jpg","2018-08-11",1134845436,"Red_g65",default,default),
+(DEFAULT,"Gamelogt_65T","isidroketerolak@gmail.com","/images/users/usuarios_id4.jpeg","2018-08-11",1134845436,"Red_g65",default,default),
 (DEFAULT,"Sulivan.terotiman","sulivantero_1234@gmail.com","/images/users/usuarios_id5.jpeg","2016-04-20",1123457634,"Tero7856_AR",default,default);
 
 INSERT INTO posts VALUES

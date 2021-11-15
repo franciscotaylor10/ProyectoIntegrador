@@ -1,6 +1,7 @@
 
 
 const db = require('../database/models');
+const post = require('../database/models/post');
 const op = db.Sequelize.Op
 
 const controller = {
@@ -16,10 +17,14 @@ const controller = {
       }]
     })
     .then((posts) =>{ //Usamos el .then para decirle que cuando me traiga la info haga lo siguiente. 
+     console.log(posts) 
       res.render("index", {posts:posts}); //renderizame la vista index y mandame esta info. 
     })
-    .catch((error) => {
-      res.send(error)
+    
+    .catch (error=> {
+      console.error(error);
+      // expected output: ReferenceError: nonExistentFunction is not defined
+      // Note - error messages will vary depending on browser
     })
     
   },

@@ -26,9 +26,6 @@ app.use(
     secret: 'Game Tune',
     resave: false,
     saveUninitialized: true,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24,
-    },
   }),
 );
 
@@ -46,8 +43,13 @@ app.use((req, res, next) => {
     res.locals={
       userlogged:req.session.user
     }
+  }else{
+    res.locals={
+      userlogged:null
+    }
   }
-})
+  next();
+});
 
 //lineas para rutas. QUE ARCHIVOS VOY A USAR DEPENDIENDO QUE ES LO QUE DICE DESPUES DEL LOCAL HOST 3000. 
 app.use('/', indexRouter);
