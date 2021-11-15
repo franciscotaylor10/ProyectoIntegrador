@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts');
@@ -19,6 +19,35 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//sesion es mas vulnerable que la cookie. 
+app.use(
+  session({
+    secret: 'Game Tune',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24,
+    },
+  }),
+);
+
+//Cookies: tiene resistencia. uno puede cerrar las pestañas de la google y sigue loguada. 
+app.use((req, res, next) => {
+  if (req.cookies.user && !req.session.user ) {
+    // Pone en la sessión lo que está en la cookie SÓLO si la sesión está vacía
+    req.session.user = req.cookies.user;
+  }
+  next();
+});
+
+app.use((req, res, next) => {
+  if(req.session.user){
+    res.locals={
+      userlogged:req.session.user
+    }
+  }
+})
 
 //lineas para rutas. QUE ARCHIVOS VOY A USAR DEPENDIENDO QUE ES LO QUE DICE DESPUES DEL LOCAL HOST 3000. 
 app.use('/', indexRouter);

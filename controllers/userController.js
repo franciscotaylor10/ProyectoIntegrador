@@ -36,6 +36,9 @@ const controller = {
   showLogin: function (req, res) {
     res.render("login");
   },
+  logIn: function (req, res) {
+  },
+
   showRegister: function (req, res) {
     res.render("registracion");
   },

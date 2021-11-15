@@ -17,12 +17,12 @@ module.exports = (sequelize, DataTypes) => {
         users_id: {
             type: DataTypes.INTEGER,
         },
-        created_at:{
-            type: DataTypes.DATE 
-         },
-         updated_at:{
-            type: DataTypes.DATE 
-         },
+        createdAt: {
+            type: DataTypes.DATE
+        },
+        updatedAt: {
+            type: DataTypes.DATE
+        }
     }
     
     const config = {

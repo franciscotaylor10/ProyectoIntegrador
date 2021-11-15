@@ -30,6 +30,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
 
         },
+        createdAt: {
+            type: DataTypes.DATE
+        },
+        updatedAt: {
+            type: DataTypes.DATE
+        }
     }
     
     const config = {
