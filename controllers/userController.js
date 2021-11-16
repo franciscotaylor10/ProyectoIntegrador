@@ -117,7 +117,8 @@ const controller = {
 
     db.User.findByPk(req.params.id, {
         include: [{
-            association: "posts"
+            association: "posts",
+            order:[["createdAt","DESC"]],
 
           },
           {

@@ -11,6 +11,6 @@ router.get("/editarPerfil", controller.showEditarPerfil);
 router.get("/login", controller.showLogin);
 router.post("/register",upload.single("imagen"),controller.crearUsuario);
 router.post("/login", controller.logIn);
-router.get("/logout",controller.logout)
+router.post("/logout",controller.logout)
 
 module.exports = router;

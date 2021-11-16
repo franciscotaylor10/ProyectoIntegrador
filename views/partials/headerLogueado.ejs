@@ -8,7 +8,9 @@
                 <div class="uk-navbar-center">
                     <ul class="uk-flex uk-flex-between uk-flex-middle">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/users/logout">Logout</a></li>
+                        <form action="/users/logout" method="POST">
+                            <button class="logout">logout</button>
+                        </form>
                     </ul>
                 </div>
                 <div class="uk-navbar-right">

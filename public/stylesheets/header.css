@@ -64,3 +64,9 @@ header nav form input, header nav form ::placeholder, header nav form span{
 .header img{
     width: 60px;
 }
+
+.logout{
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    border-right: none;
+}

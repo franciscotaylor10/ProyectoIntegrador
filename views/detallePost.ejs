@@ -10,6 +10,9 @@
         <div class="uk-section uk-section-xsmall">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                 <section class="uk-flex uk-width-2-3 detalle-container fondo-detalle">
+                    <% if (userlogged && userlogged.id == post.user.id) { %>
+                     <a href="/posts/editar">Editar</a>
+                    <% } %>
                     <article class="uk-width-2-3 uk-flex uk-flex-center uk-flex-middle detalle-post">
                         <img src="<%= post.imagen %> " alt="Imagen del post" class="imagen-post ">
                     </article>

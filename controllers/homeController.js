@@ -14,7 +14,8 @@ const controller = {
         include:[{
         association:"user"
         }]
-      }]
+      }],
+      order:[["createdAt","DESC"]],
     })
     .then((posts) =>{ //Usamos el .then para decirle que cuando me traiga la info haga lo siguiente. 
      console.log(posts) 
@@ -37,7 +38,9 @@ const controller = {
       },
       include:[{
         association:"user"
-      }]
+      }],
+      order:[["createdAt","DESC"]],
+      limit:10
     })
     .then(results=>{
       
