@@ -6,7 +6,7 @@ const controller = {
     if(!req.session.user){
       res.redirect("/")
     }
-    res.render("agregarPost");
+    res.render("agregarPost",{error:null});
   },
   agregar:function (req, res) {
     if(!req.body.descripcion){
@@ -44,8 +44,72 @@ db.Post.findByPk(req.params.id,{
     if(!req.session.user){
       res.redirect("/")
     }
-    res.render("editarPost");
+    db.Post.findByPk(req.params.id)
+    .then(post=>{
+    res.render("editarPost",{
+      post: post,
+      error: null
+    });  
+    })
   },
+  eliminar: function (req, res) {
+    db.Post.destroy({
+      where:{
+        id:req.body.id
+      }
+    })
+.then(()=>{
+  res.redirect("/")
+})
+  },
+  editarPost: function(req, res){
+    db.Post.findByPk(req.params.id)
+    .then(post=>{
+    if(!req.body.descripcion && !req.file){
+      res.render("editarPost",{error:"Edite algún campo",post:post}); 
+    }
+  })
+    if(!req.file && req.body.descripcion){
+      console.log("Llegue aca")
+      db.Post.create({
+        descripcion:req.body.descripcion
+      },{
+        where:{
+          id: req.body.id
+        }
+      })
+      .then(post=>{
+        res.redirect("/posts/detallePost/"+post.id)
+      })
+    }else if(req.file && !req.body.descripcion){
+      req.body.imagen = (req.file.destination + req.file.filename).replace("public", "")
+      db.Post.create({
+        imagen: req.body.imagen
+      },{
+        where:{
+          id: req.body.id
+        }
+      })
+    .then(post=>{
+      res.redirect("/posts/detallePost/"+post.id)
+    })
+    }else{
+      req.body.imagen = (req.file.destination + req.file.filename).replace("public", "")
+      db.Post.create({
+        descripcion: req.body.descripcion,
+        imagen: req.body.imagen
+
+      },{
+        where:{
+          id: req.body.id
+        }
+      })
+    .then(post=>{
+      res.redirect("/posts/detallePost/"+post.id)
+    })
+    }
+    
+  }
 };
 
 module.exports = controller;

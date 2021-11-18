@@ -4,13 +4,17 @@
 <%- include('./partials/head') %>
 
 <body>
-    <%- include('./partials/headerLogueado') %>
+    <% if (userlogged) { %>
+        <%- include('./partials/headerLogueado') %>
+    <% }else{ %>
+    <%- include('./partials/headerDeslogueado') %>
+    <% } %>
 
     <main class="login">
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                 
-                <form class="nueva" action="/posts/agregar" method="POST">   
+                <form class="nueva" action="/posts/agregar" method="POST" enctype="multipart/form-data">   
                     <h2>Agregar Publicación</h2> 
                     <p>
                         <label for="">imagen</label>
@@ -20,7 +24,9 @@
                         <label for="">Descripción</label>
                         <input type="text" name="descripcion">
                     </p>
-                    
+                    <% if (error) { %>
+                     <p><%= error %>  </p>
+                    <% } %>
                     <p>
                         <button type="submit">Publicar</button>
                     </p>
