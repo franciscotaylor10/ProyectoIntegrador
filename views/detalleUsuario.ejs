@@ -20,8 +20,22 @@
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-center">
                         <div class="uk-flex uk-flex-middle detalle-nombre">
                             <h3 class="uk-margin-remove"><%= user.nombre_de_usuario %></h3>
-                            <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
-                            <a href="/users/editarPerfil" uk-icon="icon:cog; ratio: 1.2" class="uk-margin-left"></a>
+                            <% if (userlogged && userlogged.id == user.id) { %>
+                                <a href="/users/editarPerfil" uk-icon="icon:cog; ratio: 1.2" class="uk-margin-left"></a>
+                            <% }else if (userlogged) {%>
+                                <% if (following) { %>
+                                    <form action="/users/unfollow" method="POST">
+                                        <input type="hidden" value="<%= user.id %> " name="id">
+                                        <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Dejar de Seguir</button>
+                                    </form>
+                                <% }else { %>
+                                    <form action="/users/follow" method="POST">
+                                        <input type="hidden" value="<%= user.id %> " name="id">
+                                        <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
+                                    </form>  
+                                <% } %>
+
+                            <% } %>   
                         </div>
                         
 

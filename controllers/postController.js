@@ -16,7 +16,7 @@ const controller = {
       res.render("agregarPost",{error:"La imagen es requerida"});   
     }
     req.body.imagen = (req.file.destination + req.file.filename).replace("public", "")
-    db.Post.create({...req.body,users_id:req.session.user.id})
+    db.Post.create({...req.body,users_id:req.session.user.id, fecha:Date.now()})
     .then(post=>{
       res.redirect("/posts/detallePost/"+post.id)
     })
@@ -33,7 +33,8 @@ db.Post.findByPk(req.params.id,{
     include:[{
       association: "user"
     }]
-  }]
+  }],
+  order: [["comments","id","desc"]]
 })
 .then(post=>{
   res.render("detallePost", { post: post});
@@ -46,10 +47,14 @@ db.Post.findByPk(req.params.id,{
     }
     db.Post.findByPk(req.params.id)
     .then(post=>{
-    res.render("editarPost",{
-      post: post,
-      error: null
-    });  
+      if(post.users_id == req.session.user.id){
+        res.render("editarPost",{
+          post: post,
+          error: null
+        }); 
+      }else{
+        res.redirect("/")  
+      }
     })
   },
   eliminar: function (req, res) {
@@ -69,9 +74,10 @@ db.Post.findByPk(req.params.id,{
       res.render("editarPost",{error:"Edite algún campo",post:post}); 
     }
   })
+
     if(!req.file && req.body.descripcion){
       console.log("Llegue aca")
-      db.Post.create({
+      db.Post.update({
         descripcion:req.body.descripcion
       },{
         where:{
@@ -79,11 +85,11 @@ db.Post.findByPk(req.params.id,{
         }
       })
       .then(post=>{
-        res.redirect("/posts/detallePost/"+post.id)
+        res.redirect("/")
       })
     }else if(req.file && !req.body.descripcion){
       req.body.imagen = (req.file.destination + req.file.filename).replace("public", "")
-      db.Post.create({
+      db.Post.update({
         imagen: req.body.imagen
       },{
         where:{
@@ -91,11 +97,11 @@ db.Post.findByPk(req.params.id,{
         }
       })
     .then(post=>{
-      res.redirect("/posts/detallePost/"+post.id)
+      res.redirect("/")
     })
     }else{
       req.body.imagen = (req.file.destination + req.file.filename).replace("public", "")
-      db.Post.create({
+      db.Post.update({
         descripcion: req.body.descripcion,
         imagen: req.body.imagen
 
@@ -105,11 +111,24 @@ db.Post.findByPk(req.params.id,{
         }
       })
     .then(post=>{
-      res.redirect("/posts/detallePost/"+post.id)
+      res.redirect("/")
     })
     }
-    
+  },
+  comentario: function(req, res){
+if(!req.session.user){
+  res.redirect("/users/login")
+}
+db.Comment.create({
+  post_id: req.body.post_id,
+  users_id: req.session.user.id,
+  comentario: req.body.comentario
+})
+.then(comentario=>{
+    res.redirect("/posts/detallePost/"+comentario.post_id)
+})
   }
+
 };
 
 module.exports = controller;

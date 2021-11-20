@@ -131,9 +131,28 @@ const controller = {
       })
 
       .then(user => {
-        res.render("detalleUsuario", {
-          user: user
-        });
+        let following = false
+                if (req.session.user) {
+                    if (req.session.user.id == user.id) {
+                        req.session.user = user
+                    }
+                    user.followers.forEach(follow => {
+                        if (req.session.user.id == follow.seguidor_id) {
+                            following = true
+                        }
+                    });
+                    console.log(following);
+                    res.render('detalleUsuario', {
+                        user: user,
+                        following: following
+                    })
+                } else {
+                    console.log(following);
+                    res.render('detalleUsuario', {
+                        user: user,
+                        following: following
+                    })
+                }
       })
 
   },
@@ -145,6 +164,26 @@ logout: function (req,res){
   req.session.destroy()
   res.clearCookie("user")
   res.redirect("/")
+},
+follow: function (req,res){
+db.Follower.create({
+  seguidor_id: req.session.user.id,
+  seguido_id: req.body.id
+})
+.then(respuesta=>{
+  res.redirect("/users/detalleUsuario/"+req.body.id)
+})
+},
+unfollow: function (req,res){
+  db.Follower.destroy({
+    where:{
+      seguidor_id: req.session.user.id,
+      seguido_id: req.body.id
+    }
+  })
+  .then(respuesta=>{
+    res.redirect("/users/detalleUsuario/"+req.body.id)
+  })
 }
 };
 

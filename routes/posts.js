@@ -11,5 +11,6 @@ router.get("/editar/:id", controller.showEditar);
 router.post("/agregar", upload.single("imagen"), controller.agregar);
 router.post("/borrar", controller.eliminar);
 router.post("/editar", upload.single("imagen"), controller.editarPost);
+router.post("/comentario", controller.comentario);
 
 module.exports = router;

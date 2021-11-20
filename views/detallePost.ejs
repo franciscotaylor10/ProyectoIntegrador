@@ -44,12 +44,14 @@
                                 </div> 
                             <% } %> 
                         </div>
-                        <div class="agregar-comentario uk-flex uk-flex-middle">
-                            <form action="" class="uk-text-center">
-                              <input type="text" class="uk-input" placeholder="Agregar comentario"> 
-                              <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Comentar</button>
-                            </form>
-                        </div>
+                        
+                            <div class="agregar-comentario uk-flex uk-flex-middle">
+                                <form action="/posts/comentario" class="uk-text-center" method="POST">
+                                    <input type="hidden" value="<%= post.id %>" name="post_id">
+                                  <input type="text" class="uk-input" placeholder="Agregar comentario" name="comentario"> 
+                                  <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Comentar</button>
+                                </form>
+                            </div>
                     </article>
                 </section>
             </div>

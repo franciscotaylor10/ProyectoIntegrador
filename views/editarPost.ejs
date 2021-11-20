@@ -14,7 +14,7 @@
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                 
-                <form class="nueva" action="/posts/editar" method="POST"> 
+                <form class="nueva" action="/posts/editar" method="POST" enctype="multipart/form-data"> 
                     <input type="hidden" value="<%= post.id %>" name="id">  
                     <h2>Editar Post</h2> 
                     <p>
@@ -23,7 +23,7 @@
                     </p>
                     <p>
                         <label for="">Descripción</label>
-                        <input type="text" name="nombreDeUsuario">
+                        <input type="text" name="descripcion" value="<%= post.descripcion %> ">
                     </p>
                     <p>
                         <button type="submit">Editar</button>
