@@ -33,11 +33,21 @@ db.Post.findByPk(req.params.id,{
     include:[{
       association: "user"
     }]
+  },{
+    association: "likes"
   }],
   order: [["comments","id","desc"]]
 })
 .then(post=>{
-  res.render("detallePost", { post: post});
+  let likeado = false
+  if(req.session.user){
+    post.likes.forEach(like => {
+      if (req.session.user.id == like.users_id) {
+          likeado = true
+      }
+  });
+  }
+  res.render("detallePost", { post: post, likeado:likeado});
 })
         
   },
@@ -127,7 +137,27 @@ db.Comment.create({
 .then(comentario=>{
     res.redirect("/posts/detallePost/"+comentario.post_id)
 })
-  }
+  },
+  like: function(req, res){
+  db.Like.create({
+    post_id: req.params.id,
+    users_id: req.session.user.id
+  })
+  .then(()=>{
+    res.redirect("/posts/detallePost/"+req.params.id)
+  })
+  },
+  dislike: function(req, res){
+    db.Like.destroy({
+      where:{
+        post_id: req.params.id,
+        users_id: req.session.user.id
+      }
+    })
+    .then(()=>{
+      res.redirect("/posts/detallePost/"+req.params.id)
+    })
+    },
 
 };
 

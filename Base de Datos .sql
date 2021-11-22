@@ -47,6 +47,14 @@ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE likes(
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+post_id INT UNSIGNED,
+users_id INT UNSIGNED,
+FOREIGN KEY (users_id) REFERENCES users(id),
+FOREIGN KEY (post_id) REFERENCES posts(id)
+);
+
 INSERT INTO users VALUES 
 (DEFAULT,"LeylaFernandez_123","leyalfernandez@gmail.com","/images/users/usuario_id1.jpeg","2020-05-30",1123456789,"4871Leyla_",default,default),
 (DEFAULT,"Emma_Raducanu.original","emmaraducanu_123@gmail.com","/images/users/usuario_id2.jpeg","2017-07-21",1134847943,"Radu_asdf",default,default),
