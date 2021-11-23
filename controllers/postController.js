@@ -139,6 +139,9 @@ db.Comment.create({
 })
   },
   like: function(req, res){
+    if(!req.session.user){
+      res.redirect("/users/login")
+    }
   db.Like.create({
     post_id: req.params.id,
     users_id: req.session.user.id
