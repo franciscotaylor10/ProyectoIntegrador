@@ -61,6 +61,11 @@ header nav form input, header nav form ::placeholder, header nav form span{
     background-color: royalblue;
     font-family: 'Luckiest Guy', cursive;
 }
+
+.posteosno{
+    font-family: 'Luckiest Guy', cursive;
+}
+
 .header img{
     width: 60px;
 }
