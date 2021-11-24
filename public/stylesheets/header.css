@@ -61,12 +61,27 @@ header nav form input, header nav form ::placeholder, header nav form span{
     background-color: royalblue;
     font-family: 'Luckiest Guy', cursive;
 }
+
+.posteosno{
+    font-family: 'Luckiest Guy', cursive;
+}
+
 .header img{
     width: 60px;
 }
 
 .logout{
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Luckiest Guy', cursive;
     color: white;
     border-right: none;
+    background-color: royalblue;
+    border-color: royalblue;
+    
+}
+
+.bienvenido{
+    background-color: rgb(106, 90, 205);
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    font-size: 30px;
 }
