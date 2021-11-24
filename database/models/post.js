@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     const config = {
         tableName: 'posts',
         underscored: true,
-        timestamps:false
+        timestamps:true
     }
     
     const Post = sequelize.define(alias, cols, config)
