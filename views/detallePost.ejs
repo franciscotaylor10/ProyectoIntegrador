@@ -33,11 +33,14 @@
                             <img src="<%= post.user.imagen %> " alt="Foto del usuario" class="fotoPerfil">
                             <h3><a class="hipervinculo" href="/users/detalleUsuario/<%= post.user.id %> "><%= post.user.nombre_de_usuario %> </a></h3>
                         </div>
-                        <% if (likeado) { %>
-                            <a href="/posts/dislike/<%= post.id %> "><span class="" uk-icon="icon:heart; ratio: 1.3" style="color: red;"></span></a>
-                        <% }else{ %>
-                        <a href="/posts/like/<%= post.id %>"><span class="" uk-icon="icon:heart; ratio: 1.3"></span></a>
-                        <% } %>
+                        <div style="display: inline-flex;">
+                            <% if (likeado) { %>
+                                <a href="/posts/dislike/<%= post.id %> "><span class="" uk-icon="icon:heart; ratio: 1.3" style="color: red;"></span></a>  
+                            <% }else{ %>
+                            <a href="/posts/like/<%= post.id %>"><span class="" uk-icon="icon:heart; ratio: 1.3"></span></a>
+                            <% } %>
+                            <p><%= post.likes.length %> </p>
+                        </div>
                         <div class="lista-comentarios" >
                             <% for( let i = 0; i < post.comments.length; i++ ) { %>
                                 <div class="comentario uk-flex uk-flex-middle uk-margin-small-top">
